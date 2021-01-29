@@ -1,1 +1,80 @@
 /* TODO: Make it awesome */
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color:rgb(189, 98, 128);
+  margin-bottom: 50px;
+  padding: 50px;
+
+}
+
+
+
+h1 {
+  font-size: 40px;
+}
+
+ul li {
+  display: inline;
+  font-size: 25px;
+  padding: 15px;
+}
+
+ol li {
+  padding-bottom: 10px;
+  font-size: 20px;
+
+}
+
+
+.copy {
+  padding-left: 50px;
+
+}
+
+legend {
+  font-size: 25px;
+  padding-bottom: 15px;
+}
+
+footer {
+  margin-top: 30px;
+}
+
+footer p {
+  text-align: center;
+}
+
+input {
+  display: block;
+  
+}
+
+span {
+  display: block;
+  margin-top: 15px;
+}
+
+table {
+  margin: 20px;
+}
+
+th {
+  border: 2px solid rgba(0, 0, 0, .5);
+  padding: 20px 10px;
+  color: #dfdcdb;
+  letter-spacing: 1px;
+  background-color: rgb(189, 98, 128);
+  font-family: Arial, Helvetica, sans-serif; 
+} 
+
+
+td {
+  border-right: 2px solid rgba(0, 0, 0, .25);
+  border-bottom: 2px solid rgba(0, 0, 0, .5);
+  padding: 5px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f3f0f0;
+  color: rgba(0, 0, 0, 0.74);
+}
