@@ -1,1 +1,41 @@
 /* TODO: Make it awesome */
+
+header {
+  background-color:rgb(5, 219, 226);
+}
+
+li{
+  display: inline-block;
+}
+[data-title]:after{
+  background-color: yellow;
+}
+
+img{
+  display: inline-block;
+  height: 400px;
+  width: 400px;
+}
+
+th{
+  display: inline-block;
+  margin: 50px;
+  align-content: center;
+  text-align: center;
+}
+
+.remover {
+  background-color: #961b9b;
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  text-align: center;
+  display: inline-block;
+  margin-left: 30px;
+  transition-duration: 0.5s;
+}
+
+.remover:hover {
+  background-color: rgb(5, 219, 226);
+  color: white;
+}
