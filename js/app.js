@@ -7,16 +7,28 @@ var Cart = function(items) {
 };
 
 Cart.prototype.addItem = function(product, quantity) {
-  // TODO: Fill in this instance method to create a new CartItem and add it to this.items
+  // TODO: Fill in this instance method to create a new CartItem and add it to this.items. DONE
+  var itemAdded = new CartItem(product,quantity);
+  this.items.push(itemAdded); //we are refrencing the array this.items and then pushing it to the itemAdded array
 };
 
-Cart.prototype.saveToLocalStorage = function() {
+Cart.prototype.saveToLocalStorage = function() //cart is the club, prototype is the acces to the club, savetToLocalStorage is the function
+  {
   // TODO: Fill in this instance method to save the contents of the cart to localStorage
+  var stringify = JSON.stringify(this.items);
+  localStorage.setItem('items', stringify);
 };
 
+// HINT: Remember to use command F
 Cart.prototype.removeItem = function(item) {
   // TODO: Fill in this instance method to remove one item from the cart.
   // Note: You will have to decide what kind of parameter to pass in here!
+  // for loop?
+  // pass index as a peramiter
+  // Call splice at the this.array
+  // Pass in index to the splice function as one of it's parameters
+  var removeItemFromCart 
+
 };
 
 var CartItem = function(product, quantity) {
@@ -24,7 +36,7 @@ var CartItem = function(product, quantity) {
   this.quantity = quantity;
 };
 
-// Product contructor.
+// Product constructor.
 var Product = function(filePath, name) {
   this.filePath = filePath;
   this.name = name;
@@ -57,3 +69,5 @@ function generateCatalog() {
 
 // Initialize the app by creating the big list of products with images and names
 generateCatalog();
+
+
