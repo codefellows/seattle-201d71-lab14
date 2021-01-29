@@ -1,3 +1,22 @@
+
+# LAB - Class 14
+
+## Project: Creating order form and shopping cart   
+
+### Author: Andy Agulue / R Mal Sweet
+
+### Links and Resources
+
+- [ci/cd](http://xyz.com) (GitHub Actions)
+
+
+### UML
+
+(can add any images that you created as reference to design your project)
+
+
+
+
 # Lab: Shopping Cart
 
 Read the document in its entirety before beginning your lab. To view this lab assignment in its own tab, click [HERE](https://codefellows.github.io/code-201-guide/curriculum/class-14/lab/){:target="_blank"}
