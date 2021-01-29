@@ -9,9 +9,15 @@ var cart = new Cart([]);
 // (the things in the Product.allProducts array) into the drop down list.
 function populateForm() {
 
-  //TODO: Add an <option> tag inside the form's select for each product
+  //ODO: Add an <option> tag inside the form's select for each product
   var selectElement = document.getElementById('items');
-  for (var i in Product.allProducts) {
+  var optionElement = document.createElement('option');
+  optionElement.textContent = 'Select Item';
+  selectElement.appendChild(optionElement);
+  for (var i = 0; i < Product.allProducts.length; i++) {
+    var optionElement = document.createElement('option');
+    optionElement.textContent = Product.allProducts[i].name;
+    selectElement.appendChild(optionElement);
 
   }
 
@@ -21,31 +27,63 @@ function populateForm() {
 // object, save the whole thing back to local storage and update the screen
 // so that it shows the # of items in the cart and a quick preview of the cart itself.
 function handleSubmit(event) {
-
-  // TODO: Prevent the page from reloading
-
+  var item = document.getElementById('items');
+  var quantity = document.getElementById('quantity')
+  //console.log(item.value);
+  // ODO: Prevent the page from reloading
+  event.preventDefault();
   // Do all the things ...
-  addSelectedItemToCart();
+  addSelectedItemToCart(item.value, quantity.value);
   cart.saveToLocalStorage();
-  updateCounter();
-  updateCartPreview();
+  updateCounter(quantity.value);
+  updateCartPreview(item.value, quantity.value);
 
 }
 
-// TODO: Add the selected item and quantity to the cart
-function addSelectedItemToCart() {
-  // TODO: suss out the item picked from the select list
-  // TODO: get the quantity
-  // TODO: using those, add one item to the Cart
+// ODO: Add the selected item and quantity to the cart
+function addSelectedItemToCart(item, quantity) {
+  // ODO: suss out the item picked from the select list
+  var item = item;
+  //console.log('addSelectedItemToCart',item);
+  // ODO: get the quantity
+  var quantity = parseInt(quantity);
+  //console.log('addSelectedItemToCart',quantity);
+
+
+
+
+  cart.addItem(item, quantity);
+
+
+
+
+  // ODO: using those, add one item to the Cart
 }
 
-// TODO: Update the cart count in the header nav with the number of items in the Cart
-function updateCounter() {}
 
-// TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
-function updateCartPreview() {
-  // TODO: Get the item and quantity from the form
-  // TODO: Add a new element to the cartContents div with that information
+
+var lastQuantity = 0;
+// ODO: Update the cart count in the header nav with the number of items in the Cart
+function updateCounter(quantity) {
+var cartCount = parseInt(quantity) + lastQuantity;
+var selectElement = document.getElementById('itemCount');
+console.log(cartCount)
+selectElement.textContent = cartCount;
+
+
+lastQuantity = cartCount;
+
+}
+
+// ODO: As you add items into the cart, show them (item & quantity) in the cart preview div
+function updateCartPreview(item, quantity) {
+  var selectElement = document.getElementById('cartContents');
+  var cartElement = document.createElement('li');
+  cartElement.textContent = "Item: " + item + "   Qty: " + quantity;
+  selectElement.appendChild(cartElement);
+
+  // ODO: Get the item and quantity from the form
+  // ODO: Add a new element to the cartContents div with that information
 }
 
 // Set up the "submit" event listener on the form.
@@ -53,6 +91,7 @@ function updateCartPreview() {
 // Call that handleSubmit method above and kick off the whole process
 var catalogForm = document.getElementById('catalog');
 catalogForm.addEventListener('submit', handleSubmit);
+
 
 // Before anything else of value can happen, we need to fill in the select
 // drop down list in the form.
