@@ -7,7 +7,7 @@
 
 ### Links and Resources
 
-- [ci/cd](http://xyz.com) (GitHub Actions)
+- [ci/cd](https://andyagulue.github.io/seattle-201d71-lab14/) (GitHub Actions)
 
 
 ### UML
