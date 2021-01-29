@@ -27,8 +27,8 @@ function handleSubmit(event) {
   // TODO: Prevent the page from reloading
 
   // Do all the things ...
-  addSelectedItemToCart();
-  cart.saveToLocalStorage();
+  addSelectedItemToCart();//
+  cart.saveToLocalStorage();//
   updateCounter();
   updateCartPreview();
 
@@ -46,10 +46,28 @@ function addSelectedItemToCart() {
 }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
-function updateCounter() {}
+function updateCounter() {
+  var numberOfItems = cart.items.length;
+  var itemLocation = document.getElementById('itemCount');
+  itemLocation.textContent = " " + numberOfItems;
+}
+
+var cartContents = document.getElementById('cartContents');
+var h2 = document.createElement('h2');
+var ol = document.createElement('ol');
+h2.textContent = 'Cart Preview';
+cartContents.appendChild(h2);
+h2.appendChild(ol);
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
+  ol.textContent = '';
+  for (var i = 0; i < cart.items.length; i++){
+    var li = document.createElement('li');
+    li.textContent = cart.items[i].product + ' ' + cart.items[i].quantity;
+    ol.appendChild(li);
+  }
+
   // TODO: Get the item and quantity from the form
   // TODO: Add a new element to the cartContents div with that information
 }
@@ -63,3 +81,4 @@ catalogForm.addEventListener('submit', handleSubmit);
 // Before anything else of value can happen, we need to fill in the select
 // drop down list in the form.
 populateForm();
+
