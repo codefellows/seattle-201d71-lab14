@@ -41,14 +41,21 @@ function addSelectedItemToCart() {
   // TODO: get the quantity
   var selected = selectElement.options[selectElement.selectedIndex];
   var quant = quantityElement.value;
+  var image = Product.allProducts[selectElement.selectedIndex].filePath;
   console.log(selected, quant);
+  console.log(image);
+
   
   // TODO: using those, add one item to the Cart
-  cart.addItem(selected,quant);
+  cart.addItem(selected,quant,image);
 }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
-function updateCounter() {}
+function updateCounter() {
+  var cartCount = document.getElementById('itemCount');
+  cartCount.textContent = cart.items.length;
+
+}
   
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {

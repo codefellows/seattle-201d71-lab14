@@ -6,9 +6,9 @@ var Cart = function(items) {
   this.items = items;
 };
 
-Cart.prototype.addItem = function(product, quantity) {
+Cart.prototype.addItem = function(product, quantity, image) {
 
-  var cartItem = new CartItem(product.textContent,quantity);
+  var cartItem = new CartItem(product.textContent,quantity, image);
   console.log(cartItem);
   this.items.push(cartItem);
   //this.saveToLocalStorage();
@@ -27,9 +27,10 @@ Cart.prototype.removeItem = function(item) {
   // Note: You will have to decide what kind of parameter to pass in here!
 };
 
-var CartItem = function(product, quantity) {
+var CartItem = function(product, quantity, filePath) {
   this.product = product;
   this.quantity = quantity;
+  this.filePath = filePath;
 };
 
 // Product contructor.
@@ -41,7 +42,7 @@ var Product = function(filePath, name) {
 Product.allProducts = [];
 
 function generateCatalog() {
-  new Product('assets/bag.jpg', 'Bag');
+  new Product('./assets/bag.jpg', 'Bag');
   new Product('assets/banana.jpg', 'Banana');
   new Product('assets/bathroom.jpg', 'Bathroom');
   new Product('assets/boots.jpg', 'Boots');
