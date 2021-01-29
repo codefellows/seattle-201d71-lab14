@@ -1,1 +1,22 @@
 /* TODO: Make it awesome */
+table{
+  border: thin black solid;
+}
+thead{
+  border: thin black solid;
+}
+tbody{
+  border: thin black solid;
+}
+tfoot{
+  border: thin black solid;
+}
+tr{
+  border: thin black solid;
+}
+td{
+  border: thin black solid;
+}
+th {
+  border: thin black solid;
+}

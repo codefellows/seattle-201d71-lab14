@@ -64,7 +64,7 @@ function updateCartPreview() {
   ol.textContent = '';
   for (var i = 0; i < cart.items.length; i++){
     var li = document.createElement('li');
-    li.textContent = cart.items[i].product + ' ' + cart.items[i].quantity;
+    li.textContent = cart.items[i].product.name + ' ' + cart.items[i].quantity;
     ol.appendChild(li);
   }
 

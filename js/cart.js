@@ -32,19 +32,19 @@ function showCart() {
   var tBody = tHead.nextSibling;
   console.log(cart.items);
   console.log(cart.items.length);
+  
   // for (var i = 0);
-  // cart.items.forEach(function (item, index) {
-  //   console.log(item, index);
-  //   var tr = document.createElement('tr');
-  //   tBody.appendChild(tr);
-  //   tr.textContent = cart.items.product;
-  // });
   for (var i = 0; i < cart.items.length; i++){
     console.log(cart.items[i]);
     var tr = document.createElement('tr');
     tBody.appendChild(tr);
-    tr.textContent = cart.items[i].product;
-
+    tr.textContent = 'x';
+    var td2 = document.createElement('td');
+    var td3 = document.createElement('td');
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    td2.textContent = cart.items[i].quantity;
+    td3.textContent = cart.items[i].product;
   }
   // TODO: Iterate over the items in the cart
   // TODO: Create a TR
